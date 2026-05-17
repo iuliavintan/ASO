@@ -1,0 +1,58 @@
+@model IEnumerable<TodoItem>
+
+@{
+    ViewData["Title"] = "Lista TODO";
+    var total = Model.Count();
+    var completed = Model.Count(item => item.IsDone);
+}
+
+<section class="todo-panel">
+    <header class="todo-header">
+        <div>
+            <p class="eyebrow">ASP.NET Core MVC</p>
+            <h1>Lista TODO</h1>
+        </div>
+        <div class="counter">
+            <strong>@completed</strong>
+            <span>din @total finalizate</span>
+        </div>
+    </header>
+
+    <form asp-action="Add" method="post" class="add-form">
+        <input name="title" type="text" maxlength="100" placeholder="Adauga o sarcina noua..." autocomplete="off" required />
+        <button type="submit">Adauga</button>
+    </form>
+
+    <div class="todo-list">
+        @if (!Model.Any())
+        {
+            <p class="empty-state">Nu exista sarcini in lista.</p>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                <article class="todo-item @(item.IsDone ? "done" : "")">
+                    <form asp-action="Toggle" method="post">
+                        <input type="hidden" name="id" value="@item.Id" />
+                        <button class="check-button" type="submit" title="Schimba starea">
+                            @(item.IsDone ? "✓" : "")
+                        </button>
+                    </form>
+
+                    <div class="todo-content">
+                        <h2>@item.Title</h2>
+                        <time datetime="@item.CreatedAt.ToString("O")">
+                            Creat la @item.CreatedAt.ToString("dd.MM.yyyy HH:mm")
+                        </time>
+                    </div>
+
+                    <form asp-action="Delete" method="post">
+                        <input type="hidden" name="id" value="@item.Id" />
+                        <button class="delete-button" type="submit">Sterge</button>
+                    </form>
+                </article>
+            }
+        }
+    </div>
+</section>

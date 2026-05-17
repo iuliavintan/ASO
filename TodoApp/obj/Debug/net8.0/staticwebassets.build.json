@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "UwUNiKNJxJAEDdhSVlQIc6LMS49t/JZFKPNM/ulz6Co=",
+  "Source": "TodoApp",
+  "BasePath": "_content/TodoApp",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "TodoApp\\wwwroot",
+      "Source": "TodoApp",
+      "ContentRoot": "D:\\an3\\sem2\\ASO\\TodoApp\\wwwroot\\",
+      "BasePath": "_content/TodoApp",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\an3\\sem2\\ASO\\TodoApp\\wwwroot\\css\\site.css",
+      "SourceId": "TodoApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\an3\\sem2\\ASO\\TodoApp\\wwwroot\\",
+      "BasePath": "_content/TodoApp",
+      "RelativePath": "css/site.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\site.css"
+    }
+  ]
+}
